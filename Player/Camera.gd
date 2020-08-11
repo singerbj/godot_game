@@ -1,18 +1,46 @@
 extends Camera
 
 enum { FIRST_PERSON, THIRD_PERSON }
+enum { RIGHT_SHOULDER, LEFT_SHOULDER }
 var camera_view = FIRST_PERSON
+var shoulder = RIGHT_SHOULDER
+var camera_x_rotation = 0
+
+var yaw = 0.0
+var pitch = 0.0
+var origin : Vector3 = Vector3()
+var dist : float = 4.0
 
 onready var screen_size_x = get_viewport().size.x
 onready var screen_size_y = get_viewport().size.y
+onready var game = get_node("/root/Game")
 onready var crosshair = $Crosshair
-onready var camera = self
+onready var camera_tween = Tween.new()
+
+
+func _ready():
+	camera_tween = Tween.new()
+	add_child(camera_tween)
 		
+#func _input(event):
+#	if event is InputEventMouseMotion and !game.menu_opened:
+#		if camera_view == FIRST_PERSON:
+#			var x_delta = event.relative.y * game.mouse_sensitivity
+#			if (camera_x_rotation + x_delta) > -90 and (camera_x_rotation + x_delta) < 90:
+#				camera.rotate_x(deg2rad(-x_delta))
+#				camera_x_rotation += x_delta
+#
+#		if camera_view == THIRD_PERSON:
+			
+			
 func _process(delta):	
 	if Input.is_action_just_pressed("toggle_camera"):
 		toggle_camera_view()
-		
-	set_camera_location()
+	if Input.is_action_just_pressed("shoulder_right"):
+		set_shoulder(RIGHT_SHOULDER)
+	if Input.is_action_just_pressed("shoulder_left"):
+		set_shoulder(LEFT_SHOULDER)				
+	set_camera_location(delta)
 
 func set_crosshair_location():
 	screen_size_x = get_viewport().size.x
@@ -34,8 +62,22 @@ func toggle_camera_view():
 	else:
 		camera_view = FIRST_PERSON
 
-func set_camera_location():
+func set_shoulder(new_shoulder):
+	shoulder = new_shoulder
+
+func set_camera_location(delta):
+	var new_camera_location = Vector3(self.transform.origin.x, self.transform.origin.y, self.transform.origin.z)
 	if camera_view == FIRST_PERSON:
-		camera.transform.origin.z = 0
+		new_camera_location.x = 0
+		new_camera_location.y = 0
+		new_camera_location.z = 0
 	elif camera_view == THIRD_PERSON:
-		camera.transform.origin.z = 10
+		if shoulder == RIGHT_SHOULDER:
+			new_camera_location.x = 2
+		elif shoulder == LEFT_SHOULDER:
+			new_camera_location.x = -2
+		new_camera_location.y = 1
+		new_camera_location.z = 5
+	if self.transform.origin != new_camera_location:
+		camera_tween.interpolate_property(self, "translation", self.transform.origin, new_camera_location, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		camera_tween.start()
