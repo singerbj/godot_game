@@ -63,21 +63,25 @@ func toggle_camera_view():
 		camera_view = FIRST_PERSON
 
 func set_shoulder(new_shoulder):
-	shoulder = new_shoulder
+	if camera_view == THIRD_PERSON:
+		shoulder = new_shoulder
 
 func set_camera_location(delta):
-	var new_camera_location = Vector3(self.transform.origin.x, self.transform.origin.y, self.transform.origin.z)
+	var self_to = self.transform.origin;
+	var new_camera_location = Vector3(self_to.x, self_to.y, self_to.z)
 	if camera_view == FIRST_PERSON:
 		new_camera_location.x = 0
 		new_camera_location.y = 0
 		new_camera_location.z = 0
 	elif camera_view == THIRD_PERSON:
 		if shoulder == RIGHT_SHOULDER:
-			new_camera_location.x = 2
+			new_camera_location.x = 0.85
 		elif shoulder == LEFT_SHOULDER:
-			new_camera_location.x = -2
-		new_camera_location.y = 1
-		new_camera_location.z = 5
+			new_camera_location.x = -0.85
+		new_camera_location.y = 0.4
+		new_camera_location.z = 3
 	if self.transform.origin != new_camera_location:
-		camera_tween.interpolate_property(self, "translation", self.transform.origin, new_camera_location, 0.1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		camera_tween.interpolate_property(self, "translation", 
+			self.transform.origin, new_camera_location, 0.1, 
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		camera_tween.start()

@@ -4,11 +4,14 @@ onready var screen_size_x = get_viewport().size.x
 onready var screen_size_y = get_viewport().size.y
 
 export var menu_opened = false
-export var mouse_sensitivity = 0.005
+export var mouse_sensitivity = 0.0005
+var title = "Game v0.1"
 
 onready var camera = $Player/Head/Camera
+onready var fps_label = $HUD/FPSLabel
 
 func _ready():
+	OS.window_fullscreen = true
 	camera.set_crosshair_location()
 				
 func _process(delta):	
@@ -19,6 +22,11 @@ func _process(delta):
 			toggle_menu_opened()
 	camera.set_allow_movement(menu_opened)
 	camera.set_crosshair_location()
+	
+	fps_label.set_position(Vector2(0, 10))
+	fps_label.set_size(Vector2(get_viewport().size.x - 10, 50))
+	fps_label.bbcode_text = "[right][b]" + str(Engine.get_frames_per_second()) + " fps[/b][/right]"
+	
 		
 func toggle_menu_opened():
 	menu_opened = !menu_opened

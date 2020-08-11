@@ -21,7 +21,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.999669, 0 )
 script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="Head"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00321913, -1.19209e-07, -0.000532627 )
 script = ExtResource( 2 )
 
 [node name="Crosshair" type="TextureRect" parent="Head/Camera"]
