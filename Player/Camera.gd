@@ -75,11 +75,11 @@ func set_camera_location(delta):
 		new_camera_location.z = 0
 	elif camera_view == THIRD_PERSON:
 		if shoulder == RIGHT_SHOULDER:
-			new_camera_location.x = 0.85
+			new_camera_location.x = 0.35
 		elif shoulder == LEFT_SHOULDER:
-			new_camera_location.x = -0.85
-		new_camera_location.y = 0.4
-		new_camera_location.z = 3
+			new_camera_location.x = -0.35
+		new_camera_location.y = 0
+		new_camera_location.z = 1.5
 	if self.transform.origin != new_camera_location:
 		camera_tween.interpolate_property(self, "translation", 
 			self.transform.origin, new_camera_location, 0.1, 

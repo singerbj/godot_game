@@ -17,7 +17,7 @@ func _physics_process(delta):
 	var direction = Vector3()
 	if !game.menu_opened:
 		if Input.is_action_pressed("move_foward"):
-			direction -= head_basis.z
+			direction -= head_basis.z			
 		if Input.is_action_pressed("move_backward"):
 			direction += head_basis.z
 		if Input.is_action_pressed("move_left"):
