@@ -6,8 +6,6 @@
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=4]
 [ext_resource path="res://Assets/images/crosshair.png" type="Texture" id=5]
 
-
-
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.3745
 height = 1.03254
@@ -35,4 +33,4 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="CharacterMesh" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.896409, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, -0.896409, 0 )

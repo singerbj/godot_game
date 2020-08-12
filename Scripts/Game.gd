@@ -5,13 +5,14 @@ onready var screen_size_y = get_viewport().size.y
 
 export var menu_opened = false
 export var mouse_sensitivity = 0.0005
+export var anim_blend = 0.2
 var title = "Game v0.1"
 
 onready var camera = $Player/Head/Camera
 onready var fps_label = $HUD/FPSLabel
 
 func _ready():
-	OS.window_fullscreen = true
+#	OS.window_fullscreen = true
 	camera.set_crosshair_location()
 				
 func _process(delta):	

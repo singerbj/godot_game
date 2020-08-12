@@ -17,22 +17,9 @@ onready var game = get_node("/root/Game")
 onready var crosshair = $Crosshair
 onready var camera_tween = Tween.new()
 
-
 func _ready():
-	camera_tween = Tween.new()
 	add_child(camera_tween)
 		
-#func _input(event):
-#	if event is InputEventMouseMotion and !game.menu_opened:
-#		if camera_view == FIRST_PERSON:
-#			var x_delta = event.relative.y * game.mouse_sensitivity
-#			if (camera_x_rotation + x_delta) > -90 and (camera_x_rotation + x_delta) < 90:
-#				camera.rotate_x(deg2rad(-x_delta))
-#				camera_x_rotation += x_delta
-#
-#		if camera_view == THIRD_PERSON:
-			
-			
 func _process(delta):	
 	if Input.is_action_just_pressed("toggle_camera"):
 		toggle_camera_view()
@@ -75,10 +62,10 @@ func set_camera_location(delta):
 		new_camera_location.z = 0
 	elif camera_view == THIRD_PERSON:
 		if shoulder == RIGHT_SHOULDER:
-			new_camera_location.x = 0.35
+			new_camera_location.x = 0.5
 		elif shoulder == LEFT_SHOULDER:
-			new_camera_location.x = -0.35
-		new_camera_location.y = 0
+			new_camera_location.x = -0.5
+		new_camera_location.y = -0.15
 		new_camera_location.z = 1.5
 	if self.transform.origin != new_camera_location:
 		camera_tween.interpolate_property(self, "translation", 
