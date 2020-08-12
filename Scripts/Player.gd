@@ -4,7 +4,7 @@ export var speed = 4
 export var sprint_speed = 6
 export var acceleration = 10
 export var gravity = 0.98
-export var jump_y_power = 35
+export var jump_y_power = 32.5
 
 onready var game = get_node("/root/Game")
 onready var head = $Head
@@ -44,7 +44,8 @@ func _physics_process(delta):
 			dir += head_basis.x
 			control_dir.x -= 1
 
-	set_anim(control_dir)	
+	set_anim(control_dir)
+		
 	dir = dir.normalized()
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor() and !game.menu_opened:
@@ -62,27 +63,29 @@ func _physics_process(delta):
 	
 func set_anim(dir):
 	var current = anim.current_animation
-	if dir == Vector2(0, 0) and current != 'idle':
-		anim.play("idle", game.anim_blend);
-	elif dir == Vector2(0, 1) :
-		if Input.is_action_pressed("sprint") and current != 'run':
-			print('run')
-			anim.play("run", game.anim_blend);
-		elif !Input.is_action_pressed("sprint") and current != 'walk_f':
-			print('walk')
+	if Input.is_action_just_pressed("jump"):
+		if current != 'jump':
+			anim.play("jump", game.anim_blend);
+	elif is_on_floor():
+		if dir == Vector2(0, 0) and current != 'idle':
+			anim.play("idle", game.anim_blend);
+		elif dir == Vector2(0, 1) :
+			if Input.is_action_pressed("sprint") and current != 'run':
+				anim.play("run", game.anim_blend);
+			elif !Input.is_action_pressed("sprint") and current != 'walk_f':
+				anim.play("walk_f", game.anim_blend);
+		elif dir == Vector2(1, 1) and current != 'walk_f_l':
+			anim.play("walk_f_l", game.anim_blend);
+		elif dir == Vector2(-1, 1) and current != 'walk_f_r':
+			anim.play("walk_f_r", game.anim_blend);
+		elif dir == Vector2(1, 0) and current != 'walk_l':
+			anim.play("walk_l", game.anim_blend);
+		elif dir == Vector2(-1, 0) and current != 'walk_r':
+			anim.play("walk_r", game.anim_blend);
+		elif dir == Vector2(0, -1) and current != 'walk_f':
 			anim.play("walk_f", game.anim_blend);
-	elif dir == Vector2(1, 1) and current != 'walk_f_l':
-		anim.play("walk_f_l", game.anim_blend);
-	elif dir == Vector2(-1, 1) and current != 'walk_f_r':
-		anim.play("walk_f_r", game.anim_blend);
-	elif dir == Vector2(1, 0) and current != 'walk_l':
-		anim.play("walk_l", game.anim_blend);
-	elif dir == Vector2(-1, 0) and current != 'walk_r':
-		anim.play("walk_r", game.anim_blend);
-	elif dir == Vector2(0, -1) and current != 'walk_f':
-		anim.play("walk_f", game.anim_blend);
-	elif dir == Vector2(1, -1) and current != 'walk_f_r':
-		anim.play("walk_f_r", game.anim_blend);
-	elif dir == Vector2(-1, -1) and current != 'walk_f_l':
-		anim.play("walk_f_l", game.anim_blend);
+		elif dir == Vector2(1, -1) and current != 'walk_f_r':
+			anim.play("walk_f_r", game.anim_blend);
+		elif dir == Vector2(-1, -1) and current != 'walk_f_l':
+			anim.play("walk_f_l", game.anim_blend);
 		
