@@ -15,7 +15,9 @@ func _ready():
 #	OS.window_fullscreen = true
 	camera.set_crosshair_location()
 				
-func _process(delta):	
+func _process(delta):
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.is_key_pressed(KEY_SHIFT):
 			get_tree().quit()
