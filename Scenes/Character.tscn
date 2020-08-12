@@ -1,16 +1,18 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://assets/character/animations/Idle Aiming.dae" type="PackedScene" id=1]
-[ext_resource path="res://assets/character/animations/walk_f_l.anim" type="Animation" id=2]
-[ext_resource path="res://assets/character/animations/walk_r.anim" type="Animation" id=3]
-[ext_resource path="res://assets/character/animations/run.anim" type="Animation" id=4]
-[ext_resource path="res://assets/character/animations/walk_b.anim" type="Animation" id=5]
-[ext_resource path="res://assets/character/animations/walk_l.anim" type="Animation" id=6]
-[ext_resource path="res://assets/character/animations/walk_f_r.anim" type="Animation" id=7]
-[ext_resource path="res://assets/character/animations/walk_b_r.anim" type="Animation" id=8]
-[ext_resource path="res://assets/character/animations/walk_f.anim" type="Animation" id=9]
-[ext_resource path="res://assets/character/animations/jump.anim" type="Animation" id=10]
-[ext_resource path="res://assets/character/animations/walk_b_l.anim" type="Animation" id=11]
+[ext_resource path="res://Assets/character/animations/Idle Aiming.dae" type="PackedScene" id=1]
+[ext_resource path="res://Assets/character/animations/walk_f_l.anim" type="Animation" id=2]
+[ext_resource path="res://Assets/character/animations/walk_r.anim" type="Animation" id=3]
+[ext_resource path="res://Assets/character/animations/run.anim" type="Animation" id=4]
+[ext_resource path="res://Assets/character/animations/walk_b.anim" type="Animation" id=5]
+[ext_resource path="res://Assets/character/animations/walk_l.anim" type="Animation" id=6]
+[ext_resource path="res://Assets/character/animations/walk_f_r.anim" type="Animation" id=7]
+[ext_resource path="res://Assets/character/animations/walk_b_r.anim" type="Animation" id=8]
+[ext_resource path="res://Assets/character/animations/walk_f.anim" type="Animation" id=9]
+[ext_resource path="res://Assets/character/animations/jump.anim" type="Animation" id=10]
+[ext_resource path="res://Assets/character/animations/walk_b_l.anim" type="Animation" id=11]
+
+
 
 [sub_resource type="Animation" id=3]
 resource_name = "idle"

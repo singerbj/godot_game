@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Idle Aiming.dae-93839f2fc3396d8712c9afd66faef70c.scn"
+path="res://.import/Idle Aiming.dae-c7bc6f33f7b96801d6e920885ba109bc.scn"
 
 [deps]
 
-source_file="res://assets/character/animations/Idle Aiming.dae"
-dest_files=[ "res://.import/Idle Aiming.dae-93839f2fc3396d8712c9afd66faef70c.scn" ]
+source_file="res://Assets/character/animations/Idle Aiming.dae"
+dest_files=[ "res://.import/Idle Aiming.dae-c7bc6f33f7b96801d6e920885ba109bc.scn" ]
 
 [params]
 
