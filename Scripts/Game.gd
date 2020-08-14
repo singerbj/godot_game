@@ -3,17 +3,18 @@ extends Spatial
 onready var screen_size_x = get_viewport().size.x
 onready var screen_size_y = get_viewport().size.y
 
-export var menu_opened = false
+export var menu_opened = true
+export var login_opened = true
 export var mouse_sensitivity = 0.0005
 export var anim_blend = 0.2
 var title = "Game v0.1"
 
 onready var camera = $Player/Head/Camera
+onready var hud = $HUD
 onready var fps_label = $HUD/FPSLabel
 
-func _ready():
+#func _ready():
 #	OS.window_fullscreen = true
-	camera.set_crosshair_location()
 				
 func _process(delta):
 	if Input.is_action_just_pressed("fullscreen"):
@@ -25,6 +26,9 @@ func _process(delta):
 			toggle_menu_opened()
 	camera.set_allow_movement(menu_opened)
 	camera.set_crosshair_location()
+	
+	hud.set_position(Vector2(0, 0))
+	hud.set_size(Vector2(get_viewport().size.x, get_viewport().size.y))
 	
 	fps_label.set_position(Vector2(0, 10))
 	fps_label.set_size(Vector2(get_viewport().size.x - 10, 50))

@@ -2,7 +2,7 @@ extends Camera
 
 enum { FIRST_PERSON, THIRD_PERSON }
 enum { RIGHT_SHOULDER, LEFT_SHOULDER }
-var camera_view = FIRST_PERSON
+var camera_view = THIRD_PERSON
 var shoulder = RIGHT_SHOULDER
 var camera_x_rotation = 0
 
@@ -19,8 +19,13 @@ onready var camera_tween = Tween.new()
 
 func _ready():
 	add_child(camera_tween)
+	self.set_crosshair_location()
 		
-func _process(delta):	
+func _process(delta):
+	if game.login_opened:
+		crosshair.visible = false
+	else:
+		crosshair.visible = true
 	if Input.is_action_just_pressed("toggle_camera"):
 		toggle_camera_view()
 	if Input.is_action_just_pressed("shoulder_right"):
