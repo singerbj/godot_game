@@ -11,4 +11,7 @@ export_presets.cfg
 data_*/
 
 # Other
-nakama/
+nakama/data/
+nakama/node1/
+nakama/node2/
+nakama/node3/
