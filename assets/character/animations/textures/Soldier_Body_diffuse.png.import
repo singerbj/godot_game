@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Soldier_Body_diffuse.png-71ec08e54e067e1c87aee4c4a5d1ac2f.s3tc.stex"
-path.etc2="res://.import/Soldier_Body_diffuse.png-71ec08e54e067e1c87aee4c4a5d1ac2f.etc2.stex"
+path.s3tc="res://.import/Soldier_Body_diffuse.png-7e7c1271a01144eba4c674554071526e.s3tc.stex"
+path.etc2="res://.import/Soldier_Body_diffuse.png-7e7c1271a01144eba4c674554071526e.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/character/animations/textures/Soldier_Body_diffuse.png"
-dest_files=[ "res://.import/Soldier_Body_diffuse.png-71ec08e54e067e1c87aee4c4a5d1ac2f.s3tc.stex", "res://.import/Soldier_Body_diffuse.png-71ec08e54e067e1c87aee4c4a5d1ac2f.etc2.stex" ]
+source_file="res://assets/character/animations/textures/Soldier_Body_diffuse.png"
+dest_files=[ "res://.import/Soldier_Body_diffuse.png-7e7c1271a01144eba4c674554071526e.s3tc.stex", "res://.import/Soldier_Body_diffuse.png-7e7c1271a01144eba4c674554071526e.etc2.stex" ]
 
 [params]
 

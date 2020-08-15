@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Soldier_head_specular.png-04b812c28a11fc10b600e3b464ee3fc9.s3tc.stex"
-path.etc2="res://.import/Soldier_head_specular.png-04b812c28a11fc10b600e3b464ee3fc9.etc2.stex"
+path.s3tc="res://.import/Soldier_head_specular.png-281276fc95f715159020b657dd62a10b.s3tc.stex"
+path.etc2="res://.import/Soldier_head_specular.png-281276fc95f715159020b657dd62a10b.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/character/animations/textures/Soldier_head_specular.png"
-dest_files=[ "res://.import/Soldier_head_specular.png-04b812c28a11fc10b600e3b464ee3fc9.s3tc.stex", "res://.import/Soldier_head_specular.png-04b812c28a11fc10b600e3b464ee3fc9.etc2.stex" ]
+source_file="res://assets/character/animations/textures/Soldier_head_specular.png"
+dest_files=[ "res://.import/Soldier_head_specular.png-281276fc95f715159020b657dd62a10b.s3tc.stex", "res://.import/Soldier_head_specular.png-281276fc95f715159020b657dd62a10b.etc2.stex" ]
 
 [params]
 

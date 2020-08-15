@@ -10,6 +10,51 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Reference",
+"class": "Authenticator",
+"language": "GDScript",
+"path": "res://src/Autoload/Delegates/Authenticator.gd"
+}, {
+"base": "KinematicBody",
+"class": "Character",
+"language": "GDScript",
+"path": "res://src/World/Character.gd"
+}, {
+"base": "Button",
+"class": "CharacterListing",
+"language": "GDScript",
+"path": "res://src/UI/Menus/Characters/CharacterListing.gd"
+}, {
+"base": "Button",
+"class": "ColorSwatch",
+"language": "GDScript",
+"path": "res://src/UI/Elements/ColorSwatch.gd"
+}, {
+"base": "Menu",
+"class": "ConfirmationPopup",
+"language": "GDScript",
+"path": "res://src/UI/Components/ConfirmationPopup.gd"
+}, {
+"base": "Reference",
+"class": "ExceptionHandler",
+"language": "GDScript",
+"path": "res://src/Autoload/Delegates/ExceptionHandler.gd"
+}, {
+"base": "LineEdit",
+"class": "LineEditValidate",
+"language": "GDScript",
+"path": "res://src/UI/Elements/LineEditValidate.gd"
+}, {
+"base": "Control",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://src/UI/Elements/Menu.gd"
+}, {
+"base": "Control",
+"class": "MenuList",
+"language": "GDScript",
+"path": "res://src/UI/Elements/MenuList.gd"
+}, {
+"base": "Reference",
 "class": "NakamaAPI",
 "language": "GDScript",
 "path": "res://addons/com.heroiclabs.nakama/api/NakamaAPI.gd"
@@ -78,8 +123,27 @@ _global_script_classes=[ {
 "class": "NakamaWriteStorageObject",
 "language": "GDScript",
 "path": "res://addons/com.heroiclabs.nakama/api/NakamaWriteStorageObject.gd"
+}, {
+"base": "Character",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/World/Player.gd"
+}, {
+"base": "Reference",
+"class": "StorageWorker",
+"language": "GDScript",
+"path": "res://src/Autoload/Delegates/StorageWorker.gd"
 } ]
 _global_script_class_icons={
+"Authenticator": "",
+"Character": "",
+"CharacterListing": "",
+"ColorSwatch": "",
+"ConfirmationPopup": "",
+"ExceptionHandler": "",
+"LineEditValidate": "",
+"Menu": "",
+"MenuList": "",
 "NakamaAPI": "",
 "NakamaAsyncResult": "",
 "NakamaClient": "",
@@ -93,18 +157,22 @@ _global_script_class_icons={
 "NakamaSocket": "",
 "NakamaSocketAdapter": "",
 "NakamaStorageObjectId": "",
-"NakamaWriteStorageObject": ""
+"NakamaWriteStorageObject": "",
+"Player": "",
+"StorageWorker": ""
 }
 
 [application]
 
 config/name="FPS Tutorial 1"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://src/Main/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
+ServerConnection="*res://src/Autoload/ServerConnection.gd"
+GameControls="*res://src/AutoLoad/GameControls.gd"
 
 [input]
 
