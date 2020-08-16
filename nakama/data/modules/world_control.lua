@@ -34,8 +34,10 @@ end
 commands[OpCodes.update_input] = function(data, state)
     local id = data.id
     local input = data.inp
+    local facing = data.facing
     if state.inputs[id] ~= nil then
         state.inputs[id].dir = input
+        state.inputs[id].facing = facing
     end
 end
 

@@ -14,7 +14,7 @@ onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	timer.connect("timeout", self, "_on_Timer_timeout")
-	hide()
+#	hide()
 
 func _input(event):
 	if event is InputEventMouseMotion and !game.menu_opened:
@@ -87,7 +87,7 @@ func _get_direction() -> Vector3:
 	# TODO: figure out how to fit sprint into this
 
 	if new_direction != last_direction:
-		ServerConnection.send_direction_update(new_direction)
+		ServerConnection.send_direction_update(new_direction, head_basis)
 		last_direction = new_direction
 	return new_direction
 

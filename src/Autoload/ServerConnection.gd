@@ -34,7 +34,8 @@ enum OpCodes {
 	UPDATE_JUMP,
 	DO_SPAWN,
 	UPDATE_COLOR,
-	INITIAL_STATE
+	INITIAL_STATE,
+	UPDATE_
 }
 
 # Server key. Must be unique and match the server it will try to connect to.
@@ -286,9 +287,9 @@ func send_position_update(position: Vector3) -> void:
 
 
 # Sends a message to the server stating a change in horizontal input for the client.
-func send_direction_update(input: Vector3) -> void:
+func send_direction_update(input: Vector3, facing: Basis) -> void:
 	if _socket:
-		var payload := {id = get_user_id(), inp = input}
+		var payload := {id = get_user_id(), inp = input, facing = facing}
 		_socket.send_match_state_async(_world_id, OpCodes.UPDATE_INPUT, JSON.print(payload))
 
 
