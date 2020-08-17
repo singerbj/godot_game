@@ -80,7 +80,7 @@ func join_game_world_async(player_name: String, player_color: Color) -> int:
 		result = yield(ServerConnection.join_world_async(), "completed")
 	if result == OK:
 		# warning-ignore:return_value_discarded
-		get_tree().change_scene_to(load("res://src/World/Game.tscn"))
+		get_tree().change_scene_to(load("res://src/Main/Game.tscn"))
 		ServerConnection.send_spawn(player_color, player_name)
 
 	character_menu.is_enabled = true

@@ -1,5 +1,5 @@
 # Kill the database
-ps -A | grep cockroach | awk '{print $1}' | xargs kill -9 $1
+#ps -A | grep cockroach | awk '{print $1}' | xargs kill -9 $1
 
 # Start 1st db node
 cd nakama

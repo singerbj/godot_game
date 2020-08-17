@@ -11,7 +11,7 @@ export var acceleration = 10
 export var gravity = 0.98
 export var jump_y_power = 32.5
 
-var color := Color.white setget _set_color
+var color := Color.white #setget _set_color
 var state: int = States.ON_GROUND
 
 var velocity := Vector3.ZERO
@@ -101,29 +101,28 @@ func set_anim():
 func spawn() -> void:
 	emit_signal("spawned")
 
-
 func despawn() -> void:
 	queue_free()
-
 
 func update_state() -> void:
 	if next_jump:
 		jump()
 		next_jump = false
 
-	if global_transform.origin.distance_squared_to(last_position) > 10000:
-		tween.interpolate_property(self, "global_transform", global_transform.origin, last_position, 0.2)
-		tween.start()
-	else:
-		var anticipated := last_position + velocity * 0.2
-		tween.interpolate_method(self, "do_state_update_move", global_transform.origin, anticipated, 0.2)
-		tween.start()
+	print(global_transform.origin.distance_squared_to(last_position))
+	
+#	if global_transform.origin.distance_squared_to(last_position) > 10000:
+#		tween.interpolate_property(self, "global_transform", global_transform.origin, last_position, 0.2)
+#		tween.start()
+#	else:
+	var anticipated := last_position + velocity * 0.2
+	tween.interpolate_method(self, "do_state_update_move", global_transform.origin, anticipated, 0.2)
+	tween.start()
 
 	dir = last_input
 
 	last_input = next_input
 	last_position = next_position
-
 
 func do_hide() -> void:
 	hide()
@@ -132,16 +131,13 @@ func do_hide() -> void:
 func do_show() -> void:
 	show()
 
-
 func _set_username(value: String) -> void:
 	username = value
 	# id_label.text = username #TODO: add a label
 
-
 func _set_color(value: Color) -> void:
 	print("_set_color")
 	#TODO set color of character via mesh or texture or something
-
 
 func do_state_update_move(new_position: Vector3) -> void:
 	var distance := new_position - global_transform.origin

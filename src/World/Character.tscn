@@ -846,6 +846,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.90
 shape = SubResource( 1 )
 
 [node name="Skeleton" type="Skeleton" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 bones/0/name = "swat_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3e-08, 0.963694, 0 )
@@ -860,7 +861,7 @@ bones/2/name = "swat_Spine1"
 bones/2/parent = 1
 bones/2/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16254, -0.001656 )
 bones/2/enabled = true
-bones/2/bound_children = [  ]
+bones/2/bound_children = [ NodePath("Torso") ]
 bones/3/name = "swat_Spine2"
 bones/3/parent = 2
 bones/3/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.136396, -0.012923 )
@@ -880,7 +881,7 @@ bones/6/name = "swat_Head"
 bones/6/parent = 5
 bones/6/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0402662, 0.008585 )
 bones/6/enabled = true
-bones/6/bound_children = [  ]
+bones/6/bound_children = [ NodePath("Head") ]
 bones/7/name = "swat_HeadTop_End"
 bones/7/parent = 6
 bones/7/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.57733, 0.024496 )
@@ -910,12 +911,12 @@ bones/12/name = "swat_LeftArm"
 bones/12/parent = 11
 bones/12/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.123191, -0.01113, -0.017935 )
 bones/12/enabled = true
-bones/12/bound_children = [  ]
+bones/12/bound_children = [ NodePath("LeftArmUpper") ]
 bones/13/name = "swat_LeftForeArm"
 bones/13/parent = 12
 bones/13/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27687, 0, 0 )
 bones/13/enabled = true
-bones/13/bound_children = [  ]
+bones/13/bound_children = [ NodePath("LeftArmLower") ]
 bones/14/name = "swat_LeftHand"
 bones/14/parent = 13
 bones/14/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.278738, 0, 0 )
@@ -1030,12 +1031,12 @@ bones/36/name = "swat_RightArm"
 bones/36/parent = 35
 bones/36/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123231, -0.01113, -0.017935 )
 bones/36/enabled = true
-bones/36/bound_children = [  ]
+bones/36/bound_children = [ NodePath("RightArmUpper") ]
 bones/37/name = "swat_RightForeArm"
 bones/37/parent = 36
 bones/37/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27687, 0, 0 )
 bones/37/enabled = true
-bones/37/bound_children = [  ]
+bones/37/bound_children = [ NodePath("RightArmLower") ]
 bones/38/name = "swat_RightHand"
 bones/38/parent = 37
 bones/38/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.278738, 0, 0 )
@@ -1145,12 +1146,12 @@ bones/59/name = "swat_LeftUpLeg"
 bones/59/parent = 0
 bones/59/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.096338, -0.032733, 0 )
 bones/59/enabled = true
-bones/59/bound_children = [  ]
+bones/59/bound_children = [ NodePath("LeftLegUpper") ]
 bones/60/name = "swat_LeftLeg"
 bones/60/parent = 59
 bones/60/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48946e-05, -0.417619, -0.00574203 )
 bones/60/enabled = true
-bones/60/bound_children = [  ]
+bones/60/bound_children = [ NodePath("LeftLegLower") ]
 bones/61/name = "swat_LeftFoot"
 bones/61/parent = 60
 bones/61/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49542e-05, -0.39148, -0.0200197 )
@@ -1170,12 +1171,12 @@ bones/64/name = "swat_RightUpLeg"
 bones/64/parent = 0
 bones/64/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096338, -0.032733, 0 )
 bones/64/enabled = true
-bones/64/bound_children = [  ]
+bones/64/bound_children = [ NodePath("RightLegUpper") ]
 bones/65/name = "swat_RightLeg"
 bones/65/parent = 64
 bones/65/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48946e-05, -0.417618, -0.00578589 )
 bones/65/enabled = true
-bones/65/bound_children = [  ]
+bones/65/bound_children = [ NodePath("RightLegLower") ]
 bones/66/name = "swat_RightFoot"
 bones/66/parent = 65
 bones/66/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.49542e-05, -0.391482, -0.0199766 )
@@ -1202,7 +1203,7 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="Head" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.689487, -0.441119, -0.574475, 0.236679, 0.886823, -0.396897, 0.684537, 0.137689, 0.715857, -0.065945, 1.5072, -0.00731077 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57733, -0.024496 )
 bone_name = "swat_Head"
 
 [node name="playerhitbox_head" type="Area" parent="Skeleton/Head"]
@@ -1212,7 +1213,7 @@ transform = Transform( 0.113, 0, 0, 0, 0.154, 0, 0, 0, 0.121, 0, 0.0476754, 0.01
 shape = SubResource( 4 )
 
 [node name="Torso" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.598601, -0.1652, -0.783827, 0.0988531, 0.986259, -0.132371, 0.794924, 0.00175359, 0.606706, 0.0182964, 1.15998, -0.00714361 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2185, 0.014115 )
 bone_name = "swat_Spine1"
 
 [node name="playerhitbox_torso" type="Area" parent="Skeleton/Torso"]
@@ -1222,7 +1223,7 @@ transform = Transform( 0.183, 0, 0, 0, 0.314, 0, 0, 0, 0.14, 0, -0.0113289, -0.0
 shape = SubResource( 5 )
 
 [node name="RightArmUpper" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.566066, -0.812626, 0.138595, 0.822574, 0.54574, -0.159809, 0.0542277, 0.204467, 0.97737, -0.127637, 1.37416, -0.168907 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184633, 1.44563, -0.054675 )
 bone_name = "swat_RightArm"
 
 [node name="playerhitbox_right_arm_upper" type="Area" parent="Skeleton/RightArmUpper"]
@@ -1232,7 +1233,7 @@ transform = Transform( 0.201, 0, 0, 0, 0.143, 0, 0, 0, 0.114, -0.1415, 0, 0.0010
 shape = SubResource( 6 )
 
 [node name="RightArmLower" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( -0.304926, -0.952318, -0.0105293, -0.50453, 0.15215, 0.849882, -0.807756, 0.264463, -0.526868, -0.284363, 1.14642, -0.183921 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.461503, 1.44563, -0.054675 )
 bone_name = "swat_RightForeArm"
 
 [node name="playerhitbox_right_arm_lower" type="Area" parent="Skeleton/RightArmLower"]
@@ -1242,7 +1243,7 @@ transform = Transform( 0.148, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.146933, 0, 0 )
 shape = SubResource( 7 )
 
 [node name="LeftArmUpper" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.28851, 0.486575, -0.824625, -0.807693, 0.586196, 0.0633027, 0.514193, 0.64778, 0.562127, 0.0854537, 1.40486, 0.130027 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184633, 1.44563, -0.054675 )
 bone_name = "swat_LeftArm"
 
 [node name="playerhitbox_left_arm_upper" type="Area" parent="Skeleton/LeftArmUpper"]
@@ -1252,7 +1253,7 @@ transform = Transform( 0.253, 0, 0, 0, 0.143, 0, 0, 0, 0.073, 0.145183, 0.003128
 shape = SubResource( 8 )
 
 [node name="LeftArmLower" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( -0.848104, -0.325285, 0.418223, 0.489399, -0.783386, 0.383139, 0.203, 0.529619, 0.823586, 0.165334, 1.18124, 0.272392 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.461503, 1.44563, -0.054675 )
 bone_name = "swat_LeftForeArm"
 
 [node name="playerhitbox_left_arm_lower" type="Area" parent="Skeleton/LeftArmLower"]
@@ -1262,7 +1263,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139956, -0.00210977, 0 )
 shape = SubResource( 9 )
 
 [node name="LeftLegUpper" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.828524, 0.160403, -0.536488, 0.159899, 0.850426, 0.501207, 0.536638, -0.501046, 0.67895, 0.046318, 0.865879, 0.0818493 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.096338, 0.930961, 0 )
 bone_name = "swat_LeftUpLeg"
 
 [node name="playerhitbox_left_leg_upper" type="Area" parent="Skeleton/LeftLegUpper"]
@@ -1272,7 +1273,7 @@ transform = Transform( 1, 0, 0, 0, 0.403, 0, 0, 0, 1, 0, -0.251104, -0.0295672 )
 shape = SubResource( 10 )
 
 [node name="LeftLegLower" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.927342, -0.157146, -0.339617, 0.166233, 0.986084, -0.00236714, 0.335262, -0.0542603, 0.940561, -0.0176424, 0.507836, 0.287162 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0962731, 0.513342, -0.00574203 )
 bone_name = "swat_LeftLeg"
 
 [node name="playerhitbox_left_leg_lower" type="Area" parent="Skeleton/LeftLegLower"]
@@ -1282,7 +1283,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.232674, 0 )
 shape = SubResource( 11 )
 
 [node name="RightLegUpper" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.121182, 0.383362, -0.915614, -0.157931, 0.918108, 0.363505, 0.979986, 0.100554, 0.171803, -0.063648, 0.880909, -0.0756486 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096338, 0.930961, 0 )
 bone_name = "swat_RightUpLeg"
 
 [node name="playerhitbox_right_leg_upper" type="Area" parent="Skeleton/RightLegUpper"]
@@ -1292,7 +1293,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255751, -0.032424 )
 shape = SubResource( 12 )
 
 [node name="RightLegLower" type="BoneAttachment" parent="Skeleton"]
-transform = Transform( 0.0955814, -0.169996, -0.980798, -0.212038, 0.959219, -0.186919, 0.972576, 0.225832, 0.055638, -0.218457, 0.495398, -0.118699 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0964029, 0.513343, -0.00578589 )
 bone_name = "swat_RightLeg"
 
 [node name="playerhitbox_right_leg_lower" type="Area" parent="Skeleton/RightLegLower"]
@@ -1302,6 +1303,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.232281, 0 )
 shape = SubResource( 13 )
 
 [node name="Skeleton2" type="Skeleton" parent="."]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
 bones/0/name = "Geo"
 bones/0/parent = -1
 bones/0/rest = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

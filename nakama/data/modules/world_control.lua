@@ -34,6 +34,9 @@ end
 commands[OpCodes.update_input] = function(data, state)
     local id = data.id
     local input = data.inp
+    print("############################")
+    print(input)
+    print("############################")
     local facing = data.facing
     if state.inputs[id] ~= nil then
         state.inputs[id].dir = input
@@ -105,8 +108,11 @@ function world_control.match_join(_, dispatcher, _, state, presences)
         }
 
         state.inputs[presence.user_id] = {
-            ["dirx"] = 0,
-            ["diry"] = 0,
+            ["dir"] = {
+                ["x"] = 0,
+                ["y"] = 0,
+                ["z"] = 0,
+            },
             ["jmp"] = 0
         }
 

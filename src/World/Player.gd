@@ -15,7 +15,7 @@ onready var timer: Timer = $Timer
 func _ready() -> void:
 	timer.connect("timeout", self, "_on_Timer_timeout")
 #	hide()
-
+	
 func _input(event):
 	if event is InputEventMouseMotion and !game.menu_opened:
 		# reset rotation
@@ -59,8 +59,8 @@ func set_is_active(value: bool) -> void:
 
 
 func _get_direction() -> Vector3:
-	if not is_processing_unhandled_input():
-		return Vector3.ZERO
+#	if not is_processing_unhandled_input():
+#		return Vector3.ZERO
 
 	# var new_direction := Vector3(
 	# 	Input.get_action_strength("move_right") - Input.get_action_strength("move_left"), 0

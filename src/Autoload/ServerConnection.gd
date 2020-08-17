@@ -289,7 +289,7 @@ func send_position_update(position: Vector3) -> void:
 # Sends a message to the server stating a change in horizontal input for the client.
 func send_direction_update(input: Vector3, facing: Basis) -> void:
 	if _socket:
-		var payload := {id = get_user_id(), inp = input, facing = facing}
+		var payload := {id = get_user_id(), inp = { "x": input.x, "y": input.y, "z": input.z }, facing = facing}
 		_socket.send_match_state_async(_world_id, OpCodes.UPDATE_INPUT, JSON.print(payload))
 
 

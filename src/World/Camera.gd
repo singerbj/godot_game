@@ -33,6 +33,9 @@ func _process(_delta):
 	if Input.is_action_just_pressed("shoulder_left"):
 		set_shoulder(LEFT_SHOULDER)				
 	set_camera_location()
+	
+	self.set_allow_movement()
+	self.set_crosshair_location()
 
 func set_crosshair_location():
 	screen_size_x = get_viewport().size.x
@@ -42,8 +45,8 @@ func set_crosshair_location():
 	var crosshair_y_location = (screen_size_y / 2) - (crosshair.texture.get_size().y / 2)
 	crosshair.set_position(Vector2(crosshair_x_location, crosshair_y_location))
 	
-func set_allow_movement(menu_opened):
-	if menu_opened:
+func set_allow_movement():
+	if game.menu_opened:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
